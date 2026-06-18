@@ -9,63 +9,47 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f4f4; color: #242424; font-size: 14px; line-height: 1.6; }
 
-  /* Header */
   .header { background: linear-gradient(135deg, #3b2e58 0%, #8661c5 100%); color: #fff; padding: 36px 40px 28px; }
   .header-badge { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; background: rgba(255,255,255,0.18); display: inline-block; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; }
   .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
   .header p { font-size: 14px; opacity: 0.88; max-width: 680px; line-height: 1.6; }
   .header-meta { margin-top: 16px; font-size: 12px; opacity: 0.75; }
 
-  /* ── Sticky Tab Nav ── */
-  .tab-nav {
-    position: sticky; top: 0; z-index: 100;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    display: flex; overflow-x: auto; padding: 0 28px;
-    scrollbar-width: none;
-  }
+  .tab-nav { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.07); display: flex; overflow-x: auto; padding: 0 28px; scrollbar-width: none; }
   .tab-nav::-webkit-scrollbar { display: none; }
-  .tab-nav a {
-    display: flex; align-items: center; gap: 6px;
-    padding: 14px 16px;
-    font-size: 13px; font-weight: 500; color: #616161;
-    text-decoration: none; white-space: nowrap;
-    border-bottom: 3px solid transparent;
-    transition: color 0.15s, border-color 0.15s;
-  }
+  .tab-nav a { display: flex; align-items: center; gap: 6px; padding: 14px 16px; font-size: 13px; font-weight: 500; color: #616161; text-decoration: none; white-space: nowrap; border-bottom: 3px solid transparent; transition: color 0.15s, border-color 0.15s; }
   .tab-nav a:hover { color: #8661c5; border-bottom-color: #c5aff0; }
   .tab-nav a.active { color: #8661c5; border-bottom-color: #8661c5; font-weight: 700; }
   .tab-nav a .tab-icon { font-size: 15px; }
 
-  /* Content */
   .content { max-width: 1100px; margin: 0 auto; padding: 32px 40px; }
-
-  /* Section anchor offset — so sticky nav doesn't cover headings */
   .section-anchor { display: block; height: 72px; margin-top: -72px; visibility: hidden; pointer-events: none; }
-
   .section-title { font-size: 13px; font-weight: 700; color: #8661c5; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 2px solid #e8e0f5; }
 
-  /* Feature tags */
   .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
   .tag { background: #f0ebff; color: #5c3d9e; font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 20px; }
 
-  /* Info banner */
+  /* ── Narrative block ── */
+  .narrative-block { background: #fff; border-radius: 12px; border: 1px solid #e0e0e0; border-left: 5px solid #8661c5; padding: 32px 36px; margin-bottom: 36px; }
+  .narrative-block .narr-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #8661c5; margin-bottom: 10px; }
+  .narrative-block h2 { font-size: 22px; font-weight: 700; color: #1a1a2e; margin-bottom: 18px; line-height: 1.3; }
+  .narrative-block .narr-lead { font-size: 15px; color: #3b2e58; font-weight: 500; line-height: 1.75; margin-bottom: 16px; }
+  .narrative-block p { font-size: 14px; color: #424242; line-height: 1.8; margin-bottom: 14px; }
+  .narrative-block p:last-child { margin-bottom: 0; }
+  .narrative-block .narr-highlight { background: #f3eeff; border-radius: 8px; padding: 16px 20px; margin: 20px 0; font-size: 14px; color: #3b2e58; line-height: 1.7; font-style: italic; border-left: 3px solid #8661c5; }
+  .narrative-block .narr-stats { display: flex; gap: 24px; flex-wrap: wrap; margin: 20px 0 4px; }
+  .narr-stat { text-align: center; background: #f8f6ff; border-radius: 10px; padding: 14px 20px; min-width: 130px; flex: 1; }
+  .narr-stat .ns-num { font-size: 20px; font-weight: 700; color: #8661c5; display: block; }
+  .narr-stat .ns-lbl { font-size: 12px; color: #616161; margin-top: 2px; }
+
   .banner { background: #fff8e1; border: 1px solid #ffe082; border-radius: 8px; padding: 14px 18px; margin-bottom: 28px; font-size: 13px; color: #5d4037; line-height: 1.5; }
   .banner strong { color: #e65100; }
 
-  /* ── Summary accordion ── */
   .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
   @media (max-width: 700px) { .summary-grid { grid-template-columns: 1fr; } }
 
   .summary-card { background: #fff; border-radius: 10px; border: 1px solid #e0e0e0; overflow: hidden; }
-  .summary-card summary {
-    display: flex; align-items: center; gap: 12px;
-    padding: 16px 20px; cursor: pointer; font-weight: 600; font-size: 14px;
-    list-style: none; user-select: none;
-    border-left: 4px solid #8661c5;
-    transition: background 0.15s;
-  }
+  .summary-card summary { display: flex; align-items: center; gap: 12px; padding: 16px 20px; cursor: pointer; font-weight: 600; font-size: 14px; list-style: none; user-select: none; border-left: 4px solid #8661c5; transition: background 0.15s; }
   .summary-card summary::-webkit-details-marker { display: none; }
   .summary-card summary:hover { background: #f9f7ff; }
   .summary-card[open] summary { background: #f3eeff; border-bottom: 1px solid #e0d6f7; }
@@ -74,7 +58,6 @@
   .summary-card summary .s-chevron { font-size: 12px; color: #9e9e9e; transition: transform 0.2s; }
   .summary-card[open] summary .s-chevron { transform: rotate(180deg); }
   .summary-body { padding: 18px 20px; font-size: 13px; }
-
   .summary-body h4 { font-size: 12px; font-weight: 700; color: #8661c5; text-transform: uppercase; letter-spacing: 0.6px; margin: 14px 0 6px; }
   .summary-body h4:first-child { margin-top: 0; }
   .summary-body p { color: #424242; margin-bottom: 8px; }
@@ -97,7 +80,6 @@
   .control-group h4 { font-size: 12px; font-weight: 700; color: #0078d4; text-transform: uppercase; margin-bottom: 8px; }
   .control-group ul { padding-left: 16px; }
 
-  /* Cards grid */
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-bottom: 32px; }
   .card { background: #fff; border-radius: 8px; border: 1px solid #e0e0e0; padding: 20px; transition: box-shadow 0.2s, border-color 0.2s; }
   .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); border-color: #0078d4; }
@@ -107,15 +89,6 @@
   .card a { display: inline-block; font-size: 12px; font-weight: 600; color: #0078d4; text-decoration: none; padding: 6px 14px; border: 1.5px solid #0078d4; border-radius: 4px; }
   .card a:hover { background: #0078d4; color: #fff; }
 
-  /* Webinar block */
-  .webinar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
-  .webinar-card { background: #fff; border-radius: 8px; border: 1px solid #e0e0e0; padding: 16px 18px; text-align: center; }
-  .webinar-card .region { font-size: 11px; font-weight: 700; color: #8661c5; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
-  .webinar-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
-  .webinar-card a { display: block; font-size: 12px; font-weight: 600; color: #fff; background: #0078d4; text-decoration: none; padding: 7px 16px; border-radius: 4px; }
-  .webinar-card a:hover { background: #005fa3; }
-
-  /* Links list */
   .links-list { background: #fff; border-radius: 8px; border: 1px solid #e0e0e0; padding: 4px 22px; margin-bottom: 32px; }
   .links-list li { list-style: none; border-bottom: 1px solid #f0f0f0; padding: 10px 0; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .links-list li:last-child { border-bottom: none; }
@@ -128,14 +101,13 @@
   .links-list a:hover { text-decoration: underline; }
   .links-list .desc { font-size: 12px; color: #757575; margin-left: auto; }
 
-  /* Prompt packs */
   .prompt-pack { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
   .pack-btn { background: #fff; border: 1.5px solid #8661c5; border-radius: 6px; padding: 10px 18px; font-size: 13px; font-weight: 600; color: #8661c5; text-decoration: none; }
   .pack-btn:hover { background: #8661c5; color: #fff; }
 
-  /* ── Webinar Hero CTA ── */
+  /* Webinar Hero */
   .webinar-hero { background: linear-gradient(135deg, #0f3460 0%, #1a6fa8 60%, #8661c5 100%); color: #fff; padding: 36px 40px 32px; }
-  .webinar-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+  .webinar-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 280px; gap: 40px; align-items: center; }
   @media (max-width: 780px) { .webinar-hero-inner { grid-template-columns: 1fr; } }
   .webinar-hero-text .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; background: rgba(255,255,255,0.18); display: inline-block; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
   .webinar-hero-text h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
@@ -143,17 +115,11 @@
   .webinar-sessions-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
   .webinar-sessions-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.4; opacity: 0.92; }
   .webinar-sessions-list li::before { content: '•'; color: #7dd3fc; font-size: 18px; line-height: 1.1; flex-shrink: 0; }
-  .webinar-reg { display: flex; flex-direction: column; gap: 10px; min-width: 220px; }
-  .reg-btn {
-    display: flex; align-items: center; justify-content: space-between;
-    font-size: 14px; font-weight: 700; text-decoration: none;
-    padding: 14px 20px; border-radius: 8px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    transition: transform 0.15s, box-shadow 0.15s;
-    cursor: pointer;
-  }
+  .webinar-reg { display: flex; flex-direction: column; gap: 10px; }
+  @media (max-width: 780px) { .webinar-reg { flex-direction: row; flex-wrap: wrap; } }
+  .reg-btn { display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 700; text-decoration: none; padding: 14px 20px; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.25); transition: transform 0.15s, box-shadow 0.15s; cursor: pointer; }
   .reg-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.35); }
-  .reg-btn .arrow { font-size: 16px; }
+  .reg-btn .arrow { font-size: 16px; margin-left: 12px; }
   .reg-btn-asia { background: #fff; color: #0f3460; }
   .reg-btn-emea { background: rgba(255,255,255,0.18); color: #fff; border: 1.5px solid rgba(255,255,255,0.5); }
   .reg-btn-emea:hover { background: rgba(255,255,255,0.28); }
@@ -161,24 +127,21 @@
   .reg-btn-amer:hover { background: rgba(255,255,255,0.28); }
   .reg-label { display: flex; align-items: center; gap: 8px; }
 
-  /* Footer */
   .footer { background: #3b2e58; color: rgba(255,255,255,0.7); text-align: center; padding: 20px; font-size: 12px; margin-top: 40px; }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <div class="header-badge">🌐 Public Resources</div>
-  <h1>Copilot Cowork —  Your AI Agent for Real Work</h1>
+  <div class="header-badge">🚀 Now Generally Available</div>
+  <h1>Copilot Cowork — Your AI Agent for Real Work</h1>
   <p>Everything you need to get started with Copilot Cowork — explore what's new, understand pricing, and find resources to help your organisation hit the ground running.</p>
-  <div class="header-meta">Last updated: 18 June 2026 &nbsp;·&nbsp; Made by Sally Chin using Copilot Cowork</div>
+  <div class="header-meta">Updated: 18 June 2026 &nbsp;·&nbsp; Made by Sally Chin using Copilot Cowork!</div>
 </div>
 
-<!-- ── Webinar Hero CTA ── -->
+<!-- Webinar Hero -->
 <div class="webinar-hero" id="webinars">
   <div class="webinar-hero-inner">
-
-    <!-- Left: text + sessions -->
     <div class="webinar-hero-text">
       <div class="eyebrow">📅 Free Live Sessions · June 2026</div>
       <h2>Get the most out of Copilot Cowork — join our expert-led webinars</h2>
@@ -189,30 +152,25 @@
         <li><span><strong>Session 3:</strong> Adoption, Value Realization &amp; Scale</span></li>
       </ul>
     </div>
-
-    <!-- Right: register buttons -->
     <div class="webinar-reg">
       <a class="reg-btn reg-btn-asia" href="https://copilotgo.eventbuilder.com/CopilotCoworkLaunchandOptimizeASIA" target="_blank">
-        <span class="reg-label">🌏 Register — Asia</span>
-        <span class="arrow">→</span>
+        <span class="reg-label">🌏 Register — Asia</span><span class="arrow">→</span>
       </a>
       <a class="reg-btn reg-btn-emea" href="https://copilotgo.eventbuilder.com/CopilotCoworkLaunchandOptimizeEMEA" target="_blank">
-        <span class="reg-label">🌍 Register — EMEA</span>
-        <span class="arrow">→</span>
+        <span class="reg-label">🌍 Register — EMEA</span><span class="arrow">→</span>
       </a>
       <a class="reg-btn reg-btn-amer" href="https://copilotgo.eventbuilder.com/CopilotCoworkLaunchandOptimizeAMERICAS" target="_blank">
-        <span class="reg-label">🌎 Register — Americas</span>
-        <span class="arrow">→</span>
+        <span class="reg-label">🌎 Register — Americas</span><span class="arrow">→</span>
       </a>
     </div>
-
   </div>
 </div>
 
-<!-- ── Sticky Tab Navigation ── -->
+<!-- Sticky Tab Nav -->
 <nav class="tab-nav" id="tab-nav">
   <a href="#webinars"><span class="tab-icon">📅</span> Webinars</a>
   <a href="#whats-new"><span class="tab-icon">🚀</span> What's New</a>
+  <a href="#why-ga"><span class="tab-icon">💡</span> Why Cowork</a>
   <a href="#product-summary"><span class="tab-icon">📋</span> Product Summary</a>
   <a href="#websites"><span class="tab-icon">🌐</span> Websites &amp; Blogs</a>
   <a href="#cost"><span class="tab-icon">🧮</span> Cost &amp; Getting Started</a>
@@ -222,7 +180,7 @@
 
 <div class="content">
 
-  <!-- ── WHAT'S NEW ── -->
+  <!-- What's New -->
   <span class="section-anchor" id="whats-new"></span>
   <div class="section-title">🚀 What's New at GA</div>
   <div class="tag-row">
@@ -238,38 +196,68 @@
     <span class="tag">Sensitivity Label Inheritance</span>
     <span class="tag">Cowork 1 Model — Coming Soon</span>
   </div>
-
   <div class="banner">
     <strong>⏰ Frontier Grace Period:</strong> June 16–30, 2026. Active Frontier users can continue at no charge while admins enable usage-based billing. Admins must act before <strong>July 1</strong> — users without billing enabled will lose access.
   </div>
 
-  <!-- ── PRODUCT SUMMARY ── -->
+  <!-- Why GA Narrative -->
+  <span class="section-anchor" id="why-ga"></span>
+  <div class="section-title">💡 Why Copilot Cowork — The Story Behind GA</div>
+  <div class="narrative-block">
+    <div class="narr-eyebrow">A new era of AI at work</div>
+    <h2>From AI assistant to AI agent — built to get real work done</h2>
+
+    <p class="narr-lead">Most AI tools help you think faster. Copilot Cowork is built to work alongside you — handling complex, multi-step tasks end to end so you can focus on what only you can do.</p>
+
+    <p>Work today is fragmented. Information lives across emails, documents, chats, and meetings. Getting a single piece of work done — a competitive analysis, a board-ready summary, a procurement brief — often means switching between a dozen tools, chasing down context, and manually stitching everything together. AI has made it easier to draft and summarise. But drafting is not the same as doing.</p>
+
+    <p>Copilot Cowork is built on a different premise. Instead of asking AI for a suggestion, you delegate a task: describe what you need, set the parameters, and Cowork takes it from there — planning the steps, accessing the right files and systems, and returning a completed result. Not a draft. Not a starting point. A finished output you can act on.</p>
+
+    <div class="narr-highlight">"Cowork runs complex, multi-tool tasks end to end, returning completed results, not drafts. It is built to be more accurate, more secure, and lower cost than alternatives — running natively within the Microsoft 365 tenant boundary, on the systems your organisation already uses."</div>
+
+    <div class="narr-stats">
+      <div class="narr-stat">
+        <span class="ns-num">50%+</span>
+        <span class="ns-lbl">of Fortune 500 used Cowork during preview</span>
+      </div>
+      <div class="narr-stat">
+        <span class="ns-num">#1</span>
+        <span class="ns-lbl">satisfaction score across Copilot &amp; Agents</span>
+      </div>
+      <div class="narr-stat">
+        <span class="ns-num">13+</span>
+        <span class="ns-lbl">plugins GA at launch, 8 more coming soon</span>
+      </div>
+      <div class="narr-stat">
+        <span class="ns-num">3 models</span>
+        <span class="ns-lbl">Anthropic Opus, Sonnet, and GPT 5.5 in Frontier</span>
+      </div>
+    </div>
+
+    <p>The move to general availability reflects more than readiness — it reflects a deliberate design. Cowork is off by default, putting organisations in control of when it turns on, who gets access, and how much is spent. Usage-based pricing means you start at your own pace, scale as you see value, and pay only for the work Cowork actually does. For IT and finance, a new Cost Management Dashboard in the Microsoft 365 Admin Center provides spending limits, usage reporting, and budget alerts — all in one place.</p>
+
+    <p>This is not a feature update. It is a shift in what enterprise AI can do — and what you can expect from it.</p>
+  </div>
+
+  <!-- Product Summary -->
   <span class="section-anchor" id="product-summary"></span>
   <div class="section-title">📋 Product Summary — Key Updates</div>
   <div class="summary-grid">
 
-    <!-- 1. Model Strategy -->
     <details class="summary-card" open>
-      <summary>
-        <span class="s-icon">🧠</span>
-        <span class="s-label">Model Strategy — Multi-Model by Design</span>
-        <span class="s-chevron">▼</span>
-      </summary>
+      <summary><span class="s-icon">🧠</span><span class="s-label">Model Strategy — Multi-Model by Design</span><span class="s-chevron">▼</span></summary>
       <div class="summary-body">
         <p>Copilot Cowork is built on a <strong>multi-model architecture</strong>, enabling flexibility and cost optimisation across different task types.</p>
-
         <h4>Generally Available</h4>
         <ul>
           <li><strong>Anthropic Opus 4.8</strong> — for complex, reasoning-heavy tasks</li>
           <li><strong>Anthropic Sonnet 4.6</strong> — balanced performance and speed</li>
           <li><strong>Sonnet + Opus Advisor</strong> — adaptive model routing</li>
         </ul>
-
         <h4>Frontier (Early Access)</h4>
         <ul>
           <li><strong>GPT 5.5 (Frontier)</strong> — hosted on Azure; data stays within Microsoft. Covered by Azure enterprise security, compliance certifications, and data-residency controls. Available in EU (EUDB) and China/Hong Kong.</li>
         </ul>
-
         <h4>Coming Soon</h4>
         <ul>
           <li><strong>Cowork 1</strong> — a secure, fine-tuned model designed to handle everyday Copilot tasks at a substantially lower cost. Removes model bias and is optimised for enterprise-grade workloads, making it ideal for cost-sensitive, high-volume use cases.</li>
@@ -277,110 +265,48 @@
       </div>
     </details>
 
-    <!-- 2. Plugins -->
     <details class="summary-card" open>
-      <summary>
-        <span class="s-icon">🔌</span>
-        <span class="s-label">Plugins — GA &amp; Coming Soon</span>
-        <span class="s-chevron">▼</span>
-      </summary>
+      <summary><span class="s-icon">🔌</span><span class="s-label">Plugins — GA &amp; Coming Soon</span><span class="s-chevron">▼</span></summary>
       <div class="summary-body">
         <h4>Available Now — Partner Plugins</h4>
         <div class="plugin-row">
-          <span class="plugin-chip">Enosix</span>
-          <span class="plugin-chip">Harvey</span>
-          <span class="plugin-chip">LSEG</span>
-          <span class="plugin-chip">Miro</span>
-          <span class="plugin-chip">monday.com</span>
-          <span class="plugin-chip">Moody's</span>
-          <span class="plugin-chip">Morningstar</span>
-          <span class="plugin-chip">S&amp;P Global Energy</span>
-          <span class="plugin-chip">TeamsMaestro</span>
+          <span class="plugin-chip">Enosix</span><span class="plugin-chip">Harvey</span><span class="plugin-chip">LSEG</span>
+          <span class="plugin-chip">Miro</span><span class="plugin-chip">monday.com</span><span class="plugin-chip">Moody's</span>
+          <span class="plugin-chip">Morningstar</span><span class="plugin-chip">S&amp;P Global Energy</span><span class="plugin-chip">TeamsMaestro</span>
         </div>
-
         <h4>Available Now — Microsoft Ecosystem</h4>
         <div class="plugin-row">
-          <span class="plugin-chip msft">Fabric</span>
-          <span class="plugin-chip msft">Dynamics 365 Sales</span>
-          <span class="plugin-chip msft">Dynamics 365 Customer Service</span>
-          <span class="plugin-chip msft">Dynamics 365 ERP</span>
+          <span class="plugin-chip msft">Fabric</span><span class="plugin-chip msft">Dynamics 365 Sales</span>
+          <span class="plugin-chip msft">Dynamics 365 Customer Service</span><span class="plugin-chip msft">Dynamics 365 ERP</span>
         </div>
-
         <h4>Coming Soon</h4>
         <div class="plugin-row">
-          <span class="plugin-chip soon">Adobe</span>
-          <span class="plugin-chip soon">Atlassian</span>
-          <span class="plugin-chip soon">Box</span>
-          <span class="plugin-chip soon">Canva</span>
-          <span class="plugin-chip soon">CB Insights</span>
-          <span class="plugin-chip soon">Databricks</span>
-          <span class="plugin-chip soon">MoneyForward</span>
-          <span class="plugin-chip soon">Templafy</span>
+          <span class="plugin-chip soon">Adobe</span><span class="plugin-chip soon">Atlassian</span><span class="plugin-chip soon">Box</span>
+          <span class="plugin-chip soon">Canva</span><span class="plugin-chip soon">CB Insights</span><span class="plugin-chip soon">Databricks</span>
+          <span class="plugin-chip soon">MoneyForward</span><span class="plugin-chip soon">Templafy</span>
         </div>
       </div>
     </details>
 
-    <!-- 3. Pricing -->
     <details class="summary-card" open>
-      <summary>
-        <span class="s-icon">💳</span>
-        <span class="s-label">Pricing Model — 3 Ways to Access Copilot Credits</span>
-        <span class="s-chevron">▼</span>
-      </summary>
+      <summary><span class="s-icon">💳</span><span class="s-label">Pricing — 3 Ways to Access Copilot Credits</span><span class="s-chevron">▼</span></summary>
       <div class="summary-body">
         <p>Copilot Cowork requires the <strong>Microsoft 365 Copilot User Subscription Licence (USL)</strong>. Cowork usage is then billed via Copilot Credits — the universal currency for M365 AI services. There are three ways to purchase credits:</p>
-
         <table class="pricing-table" style="margin-top:12px;">
-          <tr>
-            <th style="width:22%"></th>
-            <th>Pay-As-You-Go (PAYG)</th>
-            <th>Capacity Packs</th>
-            <th>Pre-Purchase Plan (P3)</th>
-          </tr>
-          <tr>
-            <td>Ideal for</td>
-            <td>No prior usage history; getting started or testing</td>
-            <td>Steady, predictable usage</td>
-            <td>Larger or variable demand</td>
-          </tr>
-          <tr>
-            <td>Price</td>
-            <td>$0.01 / Copilot Credit</td>
-            <td>$200 per pack / month / tenant</td>
-            <td>3 tiers, bulk volume discount</td>
-          </tr>
-          <tr>
-            <td>Purchase construct</td>
-            <td>Pay-as-you-go, monthly</td>
-            <td>Licence subscription (upfront — 3 yr)</td>
-            <td>One-time Azure purchase (annual upfront)</td>
-          </tr>
-          <tr>
-            <td>Where to purchase</td>
-            <td>M365 Admin Center</td>
-            <td>M365 Admin Center, Power Platform Admin Center</td>
-            <td>Azure Portal</td>
-          </tr>
-          <tr>
-            <td>MACC eligible</td>
-            <td>✅ Yes</td>
-            <td>✅ Yes*</td>
-            <td>✅ Yes*</td>
-          </tr>
+          <tr><th style="width:22%"></th><th>Pay-As-You-Go (PAYG)</th><th>Capacity Packs</th><th>Pre-Purchase Plan (P3)</th></tr>
+          <tr><td>Ideal for</td><td>No prior usage history; getting started or testing</td><td>Steady, predictable usage</td><td>Larger or variable demand</td></tr>
+          <tr><td>Price</td><td>$0.01 / Copilot Credit</td><td>$200 per pack / month / tenant</td><td>3 tiers, bulk volume discount</td></tr>
+          <tr><td>Purchase construct</td><td>Pay-as-you-go, monthly</td><td>Licence subscription (upfront — 3 yr)</td><td>One-time Azure purchase (annual upfront)</td></tr>
+          <tr><td>Where to purchase</td><td>M365 Admin Center</td><td>M365 Admin Center, Power Platform Admin Center</td><td>Azure Portal</td></tr>
+          <tr><td>MACC eligible</td><td>✅ Yes</td><td>✅ Yes*</td><td>✅ Yes*</td></tr>
         </table>
-
         <p style="margin-top:10px; font-size:12px; color:#c00000;">⚠️ <strong>Capacity Pack note:</strong> Unused monthly credits reset at the end of each month — plan usage accordingly.</p>
         <p style="margin-top:6px; font-size:12px; color:#757575;">Credits are charged based on 4 inputs: model use, context retrieval, tool calls, and runtime. Existing Capacity Packs can also be applied to Cowork.</p>
       </div>
     </details>
 
-    <!-- 4. Control & Visibility -->
     <details class="summary-card" open>
-      <summary>
-        <span class="s-icon">🛡️</span>
-        <span class="s-label">Control &amp; Visibility for Admins</span>
-        <span class="s-chevron">▼</span>
-      </summary>
+      <summary><span class="s-icon">🛡️</span><span class="s-label">Control &amp; Visibility for Admins</span><span class="s-chevron">▼</span></summary>
       <div class="summary-body">
         <div class="control-cols">
           <div class="control-group">
@@ -406,73 +332,25 @@
 
   </div>
 
-  <!-- ── WEBSITES & BLOGS ── -->
+  <!-- Websites & Blogs -->
   <span class="section-anchor" id="websites"></span>
   <div class="section-title">🌐 Official Websites &amp; Blogs</div>
   <ul class="links-list">
-    <li>
-      <span class="pill pill-blue">Blog</span>
-      <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/" target="_blank">Copilot Cowork is Now Generally Available — Microsoft 365 Blog</a>
-      <span class="desc">Official GA announcement</span>
-    </li>
-    <li>
-      <span class="pill pill-blue">Blog</span>
-      <a href="https://aka.ms/CoworkGA" target="_blank">Copilot Cowork GA Blog — Charles Lamanna, M365</a>
-      <span class="desc">Leadership blog post</span>
-    </li>
-    <li>
-      <span class="pill pill-blue">Blog</span>
-      <a href="https://techcommunity.microsoft.com/blog/microsoft365copilotblog/cowork-in-progress/4511672" target="_blank">(Co)work in Progress — Microsoft Community Hub</a>
-      <span class="desc">MTC Changelog, Jun 16</span>
-    </li>
-    <li>
-      <span class="pill pill-blue">Learn</span>
-      <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" target="_blank">Copilot Cowork Overview — Microsoft Learn</a>
-      <span class="desc">Full product documentation</span>
-    </li>
-    <li>
-      <span class="pill pill-blue">Web</span>
-      <a href="https://aka.ms/CoworkWebsite" target="_blank">Copilot Cowork Product Webpage</a>
-      <span class="desc">Share with prospects</span>
-    </li>
-    <li>
-      <span class="pill pill-green">Adoption</span>
-      <a href="https://aka.ms/CoworkAdoption" target="_blank">Copilot Cowork Adoption Site</a>
-      <span class="desc">End-user adoption content</span>
-    </li>
-    <li>
-      <span class="pill pill-blue">Blog</span>
-      <a href="https://aka.ms/WorkIQ" target="_blank">Work IQ API Announcement Blog</a>
-      <span class="desc">M365 intelligence layer for agents</span>
-    </li>
-    <li>
-      <span class="pill pill-blue">Blog</span>
-      <a href="https://aka.ms/WorkIQ/licensing" target="_blank">Work IQ API Licensing Blog</a>
-      <span class="desc">Billing via Copilot Credits</span>
-    </li>
-    <li>
-      <span class="pill pill-blue">Web</span>
-      <a href="https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-individuals" target="_blank">Frontier Programme Website</a>
-      <span class="desc">Early access programme info</span>
-    </li>
-    <li>
-      <span class="pill pill-blue">Roadmap</span>
-      <a href="https://aka.ms/m365roadmap" target="_blank">Microsoft 365 Roadmap</a>
-      <span class="desc">Public product roadmap</span>
-    </li>
-    <li>
-      <span class="pill pill-blue">Learn</span>
-      <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/api-overview" target="_blank">Work IQ API Learn Documentation</a>
-      <span class="desc">Technical overview for developers</span>
-    </li>
-    <li>
-      <span class="pill pill-blue">FAQ</span>
-      <a href="https://aka.ms/CopilotCoworkFAQ" target="_blank">Copilot Cowork FAQ</a>
-      <span class="desc">Public FAQ</span>
-    </li>
+    <li><span class="pill pill-blue">Blog</span><a href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/" target="_blank">Copilot Cowork is Now Generally Available — Microsoft 365 Blog</a><span class="desc">Official GA announcement</span></li>
+    <li><span class="pill pill-blue">Blog</span><a href="https://aka.ms/CoworkGA" target="_blank">Copilot Cowork GA Blog — Charles Lamanna, M365</a><span class="desc">Leadership blog post</span></li>
+    <li><span class="pill pill-blue">Blog</span><a href="https://techcommunity.microsoft.com/blog/microsoft365copilotblog/cowork-in-progress/4511672" target="_blank">(Co)work in Progress — Microsoft Community Hub</a><span class="desc">MTC Changelog, Jun 16</span></li>
+    <li><span class="pill pill-blue">Learn</span><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" target="_blank">Copilot Cowork Overview — Microsoft Learn</a><span class="desc">Full product documentation</span></li>
+    <li><span class="pill pill-blue">Web</span><a href="https://aka.ms/CoworkWebsite" target="_blank">Copilot Cowork Product Webpage</a><span class="desc">Official product page</span></li>
+    <li><span class="pill pill-green">Adoption</span><a href="https://aka.ms/CoworkAdoption" target="_blank">Copilot Cowork Adoption Site</a><span class="desc">End-user adoption content</span></li>
+    <li><span class="pill pill-blue">Blog</span><a href="https://aka.ms/WorkIQ" target="_blank">Work IQ API Announcement Blog</a><span class="desc">M365 intelligence layer for agents</span></li>
+    <li><span class="pill pill-blue">Blog</span><a href="https://aka.ms/WorkIQ/licensing" target="_blank">Work IQ API Licensing Blog</a><span class="desc">Billing via Copilot Credits</span></li>
+    <li><span class="pill pill-blue">Web</span><a href="https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-individuals" target="_blank">Frontier Programme Website</a><span class="desc">Early access programme info</span></li>
+    <li><span class="pill pill-blue">Roadmap</span><a href="https://aka.ms/m365roadmap" target="_blank">Microsoft 365 Roadmap</a><span class="desc">Public product roadmap</span></li>
+    <li><span class="pill pill-blue">Learn</span><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/api-overview" target="_blank">Work IQ API Learn Documentation</a><span class="desc">Technical overview for developers</span></li>
+    <li><span class="pill pill-blue">FAQ</span><a href="https://aka.ms/CopilotCoworkFAQ" target="_blank">Copilot Cowork FAQ</a><span class="desc">Public FAQ</span></li>
   </ul>
 
-  <!-- ── COST & GETTING STARTED ── -->
+  <!-- Cost & Getting Started -->
   <span class="section-anchor" id="cost"></span>
   <div class="section-title">🧮 Cost &amp; Getting Started</div>
   <div class="grid">
@@ -497,12 +375,12 @@
     <div class="card">
       <div class="card-icon">🤖</div>
       <h3>AI Skills Navigator</h3>
-      <p>Help users build skills and get started with Copilot Cowork through guided, role-based learning paths.</p>
+      <p>Get your team started with Copilot Cowork through guided, role-based learning paths.</p>
       <a href="https://aka.ms/CoworkonASN" target="_blank">Open Navigator</a>
     </div>
   </div>
 
-  <!-- ── DEMOS & VIDEOS ── -->
+  <!-- Demos & Videos -->
   <span class="section-anchor" id="demos"></span>
   <div class="section-title">🎬 Demos &amp; Videos</div>
   <div class="grid">
@@ -521,32 +399,30 @@
     <div class="card">
       <div class="card-icon">📹</div>
       <h3>Jared Spataro: Cowork Pricing</h3>
-      <p>Top of Mind video — Cowork's usage-based billing model, cost management tools, and what it means for customers.</p>
+      <p>Hear directly from Microsoft's CVP on Cowork's usage-based billing model and what it means for your organisation.</p>
       <a href="https://aka.ms/CopilotCoworkPricingVideo" target="_blank">Watch Video</a>
     </div>
   </div>
 
-  <!-- ── PROMPT PACKS ── -->
+  <!-- Prompt Packs -->
   <span class="section-anchor" id="prompts"></span>
   <div class="section-title">💬 Cowork Prompt Packs</div>
-  <p style="font-size:13px; color:#616161; margin-bottom:14px;">Ready-to-use prompt libraries tailored by role — help customers get started quickly with Copilot Cowork.</p>
+  <p style="font-size:13px; color:#616161; margin-bottom:14px;">Ready-to-use prompt libraries tailored by role — get your team started with Copilot Cowork right away.</p>
   <div class="prompt-pack">
     <a class="pack-btn" href="https://aka.ms/copilot-cowork-sales-sc" target="_blank">💼 Sales Prompt Pack</a>
     <a class="pack-btn" href="https://aka.ms/copilot-cowork-marketing-sc" target="_blank">📣 Marketing Prompt Pack</a>
     <a class="pack-btn" href="https://aka.ms/copilot-cowork-allfunctions-sc" target="_blank">🏢 All Functions Prompt Pack</a>
   </div>
 
-
 </div>
 
 <div class="footer">
-  Copilot Cowork GA · Public Resources · Updated 18 June 2026 by Sally Chin, ASEAN SMC<br>
+  Copilot Cowork · Microsoft 365 · Generally Available June 2026<br>
   <span style="opacity:0.55; font-style:italic;">✨ This page was researched, compiled, and built using Copilot Cowork</span>
 </div>
 
-<!-- Tab highlight on scroll -->
 <script>
-  const sections = ['webinars','whats-new','product-summary','websites','cost','demos','prompts'];
+  const sections = ['webinars','whats-new','why-ga','product-summary','websites','cost','demos','prompts'];
   const navLinks = document.querySelectorAll('.tab-nav a');
   window.addEventListener('scroll', () => {
     let current = '';
@@ -559,6 +435,5 @@
     });
   }, { passive: true });
 </script>
-
 </body>
 </html>
