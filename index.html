@@ -12,8 +12,29 @@
   .header { background: linear-gradient(135deg, #3b2e58 0%, #8661c5 100%); color: #fff; padding: 36px 40px 28px; }
   .header-badge { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; background: rgba(255,255,255,0.18); display: inline-block; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; }
   .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
-  .header p { font-size: 14px; opacity: 0.88; max-width: 680px; line-height: 1.6; }
+  .header p { font-size: 15px; opacity: 0.92; max-width: 680px; line-height: 1.65; }
   .header-meta { margin-top: 16px; font-size: 12px; opacity: 0.75; }
+
+  /* ── Top 3 Actions ── */
+  .actions-block { background: #fff; border-radius: 12px; border: 1px solid #e0e0e0; padding: 28px 32px; margin-bottom: 36px; }
+  .actions-block .actions-intro { font-size: 14px; color: #424242; margin-bottom: 22px; line-height: 1.6; }
+  .actions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 800px) { .actions-grid { grid-template-columns: 1fr; } }
+  .action-card { border-radius: 10px; padding: 22px 20px; position: relative; }
+  .action-card.ac-1 { background: #f3eeff; border: 1.5px solid #c5aff0; }
+  .action-card.ac-2 { background: #e8f4ff; border: 1.5px solid #99ccff; }
+  .action-card.ac-3 { background: #e6f9f0; border: 1.5px solid #86d6a8; }
+  .action-num { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .ac-1 .action-num { color: #8661c5; }
+  .ac-2 .action-num { color: #0078d4; }
+  .ac-3 .action-num { color: #1b7a3e; }
+  .action-card h3 { font-size: 15px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px; line-height: 1.3; }
+  .action-card p { font-size: 13px; color: #424242; line-height: 1.6; margin-bottom: 14px; }
+  .action-card a { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 700; text-decoration: none; padding: 7px 14px; border-radius: 6px; transition: opacity 0.15s; }
+  .ac-1 a { background: #8661c5; color: #fff; }
+  .ac-2 a { background: #0078d4; color: #fff; }
+  .ac-3 a { background: #1b7a3e; color: #fff; }
+  .action-card a:hover { opacity: 0.85; }
 
   .tab-nav { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.07); display: flex; overflow-x: auto; padding: 0 28px; scrollbar-width: none; }
   .tab-nav::-webkit-scrollbar { display: none; }
@@ -135,8 +156,8 @@
 <div class="header">
   <div class="header-badge">🚀 Now Generally Available</div>
   <h1>Copilot Cowork — Your AI Agent for Real Work</h1>
-  <p>Everything you need to get started with Copilot Cowork — explore what's new, understand pricing, and find resources to help your organisation hit the ground running.</p>
-  <div class="header-meta">Updated: 18 June 2026 &nbsp;·&nbsp; Made by Sally Chin using Copilot Cowork!</div>
+  <p>Copilot Cowork is now generally available. Usage is billed through Copilot Credits — a new consumption model on top of your existing Microsoft 365 Copilot licence. Here is what changes, what to do now, and how to get started.</p>
+  <div class="header-meta">Updated: 18 June 2026 &nbsp;·&nbsp; Microsoft 365</div>
 </div>
 
 <!-- Webinar Hero -->
@@ -170,11 +191,13 @@
 <nav class="tab-nav" id="tab-nav">
   <a href="#webinars"><span class="tab-icon">📅</span> Webinars</a>
   <a href="#whats-new"><span class="tab-icon">🚀</span> What's New</a>
+  <a href="#actions"><span class="tab-icon">✅</span> 3 Key Actions</a>
   <a href="#why-ga"><span class="tab-icon">💡</span> Why Cowork</a>
   <a href="#product-summary"><span class="tab-icon">📋</span> Product Summary</a>
   <a href="#websites"><span class="tab-icon">🌐</span> Websites &amp; Blogs</a>
   <a href="#cost"><span class="tab-icon">🧮</span> Cost &amp; Getting Started</a>
   <a href="#demos"><span class="tab-icon">🎬</span> Demos &amp; Videos</a>
+  <a href="#prompts"><span class="tab-icon">💬</span> Prompt Packs</a>
 </nav>
 
 <div class="content">
@@ -199,43 +222,70 @@
     <strong>⏰ Frontier Grace Period:</strong> June 16–30, 2026. Active Frontier users can continue at no charge while admins enable usage-based billing. Admins must act before <strong>July 1</strong> — users without billing enabled will lose access.
   </div>
 
+  <!-- Top 3 Actions -->
+  <span class="section-anchor" id="actions"></span>
+  <div class="section-title">✅ 3 Key Actions for All Customers</div>
+  <div class="actions-block">
+    <p class="actions-intro">Copilot Cowork is now generally available and moves to a usage-based billing model. Here are the three things every customer needs to do.</p>
+    <div class="actions-grid">
+
+      <div class="action-card ac-1">
+        <div class="action-num">Action 1 — Billing</div>
+        <h3>Enable usage-based billing before 1 July</h3>
+        <p>Cowork usage is billed via Copilot Credits. Admins must set up and enable usage-based billing in the M365 Admin Center before 1 July 2026. Frontier users who don't act by this date will lose access.</p>
+        <a href="https://admin.cloud.microsoft/?#/copilot/overview/costmanagement/overview" target="_blank">Open Cost Management →</a>
+      </div>
+
+      <div class="action-card ac-2">
+        <div class="action-num">Action 2 — Pricing</div>
+        <h3>Choose the right Copilot Credits model for your organisation</h3>
+        <p>Three options: Pay-As-You-Go ($0.01/credit, no commitment), Capacity Pack ($200/pack/month, resets monthly), or Pre-Purchase Plan (bulk discount, annual). Use the estimator to model your spend before committing.</p>
+        <a href="https://aka.ms/CustomerCoworkEstimator" target="_blank">Estimate your spend →</a>
+      </div>
+
+      <div class="action-card ac-3">
+        <div class="action-num">Action 3 — Adoption</div>
+        <h3>Get your team up and running with Cowork</h3>
+        <p>Register for the expert-led webinar series covering features, billing, governance, and adoption. Share role-based prompt packs with your team and use the AI Skills Navigator to build confidence quickly.</p>
+        <a href="https://copilotgo.eventbuilder.com/CopilotCoworkLaunchandOptimizeASIA" target="_blank">Register for webinars →</a>
+      </div>
+
+    </div>
+  </div>
+
   <!-- Why GA Narrative -->
   <span class="section-anchor" id="why-ga"></span>
   <div class="section-title">💡 Why Copilot Cowork — The Story Behind GA</div>
   <div class="narrative-block">
     <div class="narr-eyebrow">A new era of AI at work</div>
-    <h2>From AI assistant to AI agent — built to get real work done</h2>
+    <h2>From AI assistant to AI agent — and a new way to pay for it</h2>
 
-    <p class="narr-lead">Most AI tools help you think faster. Copilot Cowork is built to work alongside you — handling complex, multi-step tasks end to end so you can focus on what only you can do.</p>
+    <p class="narr-lead">Copilot Cowork is not an upgrade to Copilot Chat. It is a different kind of AI — one that takes on complex, multi-step tasks and returns completed results. With general availability, it is now accessible to all Microsoft 365 Copilot customers through a new usage-based model built for scale.</p>
 
-    <p>Work today is fragmented. Information lives across emails, documents, chats, and meetings. Getting a single piece of work done — a competitive analysis, a board-ready summary, a procurement brief — often means switching between a dozen tools, chasing down context, and manually stitching everything together. AI has made it easier to draft and summarise. But drafting is not the same as doing.</p>
+    <p>For most organisations, the shift matters in two ways. First, what Cowork can do: rather than prompting AI for a draft or a summary, you delegate a task — a competitive brief, a procurement analysis, a stakeholder update — and Cowork handles it end to end, across your files, emails, and M365 apps, without you staying in the loop. Second, how it is priced: instead of a flat per-seat licence, Cowork runs on Copilot Credits — a consumption-based currency that charges only for the work done. You stay in control of who uses it, how much is spent, and what it costs per task.</p>
 
-    <p>Copilot Cowork is built on a different premise. Instead of asking AI for a suggestion, you delegate a task: describe what you need, set the parameters, and Cowork takes it from there — planning the steps, accessing the right files and systems, and returning a completed result. Not a draft. Not a starting point. A finished output you can act on.</p>
-
-    <div class="narr-highlight">"Cowork runs complex, multi-tool tasks end to end, returning completed results, not drafts. It is built to be more accurate, more secure, and lower cost than alternatives — running natively within the Microsoft 365 tenant boundary, on the systems your organisation already uses."</div>
+    <div class="narr-highlight">"Over half of the Fortune 500 used Cowork during the Frontier preview — and it achieved one of the highest satisfaction scores across all Microsoft Copilot and Agents products. GA is the next step: making that capability available to every M365 Copilot customer, with the controls and pricing model to match."</div>
 
     <div class="narr-stats">
       <div class="narr-stat">
         <span class="ns-num">50%+</span>
-        <span class="ns-lbl">of Fortune 500 used Cowork during preview</span>
+        <span class="ns-lbl">of Fortune 500 used Cowork in preview</span>
       </div>
       <div class="narr-stat">
         <span class="ns-num">#1</span>
         <span class="ns-lbl">satisfaction score across Copilot &amp; Agents</span>
       </div>
       <div class="narr-stat">
-        <span class="ns-num">13+</span>
-        <span class="ns-lbl">plugins GA at launch, 8 more coming soon</span>
+        <span class="ns-num">3 options</span>
+        <span class="ns-lbl">PAYG · Capacity Pack · Pre-Purchase (P3)</span>
       </div>
       <div class="narr-stat">
-        <span class="ns-num">3 models</span>
-        <span class="ns-lbl">Anthropic Opus, Sonnet, and GPT 5.5 in Frontier</span>
+        <span class="ns-num">Off by default</span>
+        <span class="ns-lbl">Admins control access, limits &amp; alerts</span>
       </div>
     </div>
 
-    <p>The move to general availability reflects more than readiness — it reflects a deliberate design. Cowork is off by default, putting organisations in control of when it turns on, who gets access, and how much is spent. Usage-based pricing means you start at your own pace, scale as you see value, and pay only for the work Cowork actually does. For IT and finance, a new Cost Management Dashboard in the Microsoft 365 Admin Center provides spending limits, usage reporting, and budget alerts — all in one place.</p>
-
-    <p>This is not a feature update. It is a shift in what enterprise AI can do — and what you can expect from it.</p>
+    <p>The move to GA is also a signal about enterprise readiness. Cowork runs natively within your Microsoft 365 tenant — no extra infrastructure, no data leaving Microsoft, and full coverage under your existing security and compliance policies. IT stays in control through the new Cost Management Dashboard: set budgets, define spending limits by user or group, and monitor usage in real time. As your organisation grows into Cowork, the model grows with you.</p>
   </div>
 
   <!-- Product Summary -->
@@ -403,6 +453,15 @@
     </div>
   </div>
 
+  <!-- Prompt Packs -->
+  <span class="section-anchor" id="prompts"></span>
+  <div class="section-title">💬 Cowork Prompt Packs</div>
+  <p style="font-size:13px; color:#616161; margin-bottom:14px;">Ready-to-use prompt libraries tailored by role — get your team started with Copilot Cowork right away.</p>
+  <div class="prompt-pack">
+    <a class="pack-btn" href="https://aka.ms/copilot-cowork-sales-sc" target="_blank">💼 Sales Prompt Pack</a>
+    <a class="pack-btn" href="https://aka.ms/copilot-cowork-marketing-sc" target="_blank">📣 Marketing Prompt Pack</a>
+    <a class="pack-btn" href="https://aka.ms/copilot-cowork-allfunctions-sc" target="_blank">🏢 All Functions Prompt Pack</a>
+  </div>
 
 </div>
 
@@ -412,7 +471,7 @@
 </div>
 
 <script>
-  const sections = ['webinars','whats-new','why-ga','product-summary','websites','cost','demos','prompts'];
+  const sections = ['webinars','whats-new','actions','why-ga','product-summary','websites','cost','demos','prompts'];
   const navLinks = document.querySelectorAll('.tab-nav a');
   window.addEventListener('scroll', () => {
     let current = '';
